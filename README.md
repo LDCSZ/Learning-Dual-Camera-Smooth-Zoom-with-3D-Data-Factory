@@ -10,10 +10,5 @@ When zooming between dual cameras on a mobile, noticeable jumps in geometric con
 =======================
 2.1 Syn-ZoomGS
 -----------------------
-<img width="3284" height="511" alt="pipline_2" src="https://github.com/user-attachments/assets/2996e5bd-b140-426e-b8b0-c82c15e59820" />
-First we use the Syn-ZoomGS method to generate training data. (a)The pipline of Syn-ZoomGS. Syn-ZoomGS first sample $\Delta \mathbf{T}$ from $\mathcal{T}$, calculate camera parameters of UW and W and interpolate camera parameter of ${v}_{i}$. Then it render image sequence $\{\mathbf{X}_{{v}_{i}}\}_{i=1}^{N}$ from reconstructed 3DGS representation. Finally it samples color transformation parameters from $\mathcal{C}$ and interpolates them, and applies them to $\{\mathbf{X}^{(m)}_{uw}\}_{m=1}^{M}$ as ~\cref{eq:brightnesst_transform,eq:contrast_transform,eq:hue_transform,eq:saturation_transform}.
-		%
-		(b) Statistics of Geometric transformation parameters. Syn-ZoomGS collect multiple $\Delta \mathbf{T}$(~\cref{equ32303}) from UW\&W pairs and statistically obtain gaussian distribution $\mathcal{T}$.
-		%
-		(c) Statistics of Color transformation parameters. Syn-ZoomGS collect multiple color parameters $\{b_f, c_f, h_f, s_f\}$ from UW\&W pairs through Color Fit framework and statistically obtain gaussian distribution $\mathcal{C}$.
-		%
+<img width="3284" height="711" alt="pipline_2" src="https://github.com/user-attachments/assets/2996e5bd-b140-426e-b8b0-c82c15e59820" />
+First we use the Syn-ZoomGS method to generate training data. (a)The pipline of Syn-ZoomGS. Syn-ZoomGS first sample camera parameters of UW and W from data Distribution, calculate and interpolate camera parameter. Then it render image sequence from reconstructed 3DGS representation. Finally it samples color transformation parameters from color Distribution and interpolates them, and applies them to the rendered images. (b) Statistics of Geometric transformation parameters. (c) Statistics of Color transformation parameters.
