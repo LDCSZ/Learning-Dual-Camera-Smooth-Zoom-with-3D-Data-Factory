@@ -27,13 +27,13 @@ The Structure of ZoomFI, a specialized FI model for photo-realistic zooming betw
 
 ## 4.Start for Syn-ZoomGS
 - Run [`cd ./SynZoomGS`](./SynZoomGS)
-- For xiaomi data, zoom factor of W set to 0.6
+- For xiaomi data, zoom factor of W set to 0.6, 
   Run [`bash ./zoomgs_render_xiaomi06.sh`](./zoomgs_trains.sh)
-- For xiaomi data, zoom factor of W set to 0.85
+- For xiaomi data, zoom factor of W set to 0.85, 
   Run [`bash ./zoomgs_render_xiaomi85.sh`](./zoomgs_trains.sh)
-- For huawei data, zoom factor of W set to 0.6
+- For huawei data, zoom factor of W set to 0.6, 
   Run [`bash ./zoomgs_render_huawei06.sh`](./zoomgs_trains.sh)
-- For huawei data, zoom factor of W set to 0.85
+- For huawei data, zoom factor of W set to 0.85, 
   Run [`bash ./zoomgs_render_huawei85.sh`](./zoomgs_trains.sh)
 
 ## 5.Start for Real-ZoomGS
