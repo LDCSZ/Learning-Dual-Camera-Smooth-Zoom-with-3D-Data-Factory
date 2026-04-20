@@ -20,6 +20,8 @@ The Structure of ZoomFI, a specialized FI model for photo-realistic zooming betw
 
 ## 3.Prerequisites and Datasets
 ### 3.1 Prerequisites
+- Python 3.8.16, PyTorch 2.1.1, **cuda-11.8**
+- We provide detailed dependencies in [`environment.yml`] for Real-ZoomGS and ZoomFI, and [`./SynZoomGS/environment.yml`] for Syn-ZoomGS.
 
 ### 3.2 Datasets
 
