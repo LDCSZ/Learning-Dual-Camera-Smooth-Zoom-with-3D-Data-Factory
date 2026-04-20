@@ -17,3 +17,8 @@ First we use the Syn-ZoomGS method to generate training data. (a)The pipline of 
 -----------------------
 <img width="6168" height="497" alt="pipline_3" src="https://github.com/user-attachments/assets/26a2cb15-9b74-449f-9248-4d7f65164e07" />
 (a) Over view of Real-ZoomGS. The virtual (V) camera parameters are constructed by interpolating the dual-camera ones, and are then input into ZoomGS to generate zoom sequences. (b) Construction of Real-ZoomGS. Real-ZoomGS employs a camera transition (CamTrans) module to transform the base (\ie, UW camera) Gaussians to the specific camera Gaussians according to the camera encoding.
+
+2.3 Zoom FI
+-----------------------
+<img width="2207" height="2813" alt="FI_model_0313" src="https://github.com/user-attachments/assets/f3e8a9fe-def5-42e9-ba77-acf6e2852277" />
+The Structure of ZoomFI, a specialized FI model for photo-realistic zooming between dual cameras.
