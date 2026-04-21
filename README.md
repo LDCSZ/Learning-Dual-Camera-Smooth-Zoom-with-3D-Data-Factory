@@ -12,7 +12,7 @@ First we use the Syn-ZoomGS method to generate training data. (a)The pipline of 
 
 ### 2.2 Real-ZoomGS
 <p align="center"><img src="./assets/pipline_realzoomgs.png" width="95%"></p>
-(a) Over view of Real-ZoomGS. The virtual (V) camera parameters are constructed by interpolating the dual-camera ones, and are then input into ZoomGS to generate zoom sequences. (b) Construction of Real-ZoomGS. Real-ZoomGS employs a camera transition (CamTrans) module to transform the base (\ie, UW camera) Gaussians to the specific camera Gaussians according to the camera encoding.
+(a) Over view of Real-ZoomGS. The virtual (V) camera parameters are constructed by interpolating the dual-camera ones, and are then input into ZoomGS to generate zoom sequences. (b) Construction of Real-ZoomGS. Real-ZoomGS employs a camera transition (CamTrans) module to transform the base (ie, UW camera) Gaussians to the specific camera Gaussians according to the camera encoding.
 
 ### 2.3 Zoom FI
 <p align="center"><img src="./assets/FI_model.png" width="35%"></p>
