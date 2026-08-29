@@ -1,22 +1,18 @@
 # Learning-Dual-Camera-Smooth-Zoom-with-3D-Data-Factory
-Code of Learning Dual-Camera Smooth Zoom with 3D Data Factory
+Code of Learning Dual-Camera Smooth Zoom via Decoupled Geometric-Photometric Data Synthesis
 
 ## 1.Abstract
 <p align="center"><img src="./assets/intro.png" width="95%"></p>
-When zooming between dual cameras on a mobile, noticeable jumps in geometric content and image color occur in the preview, inevitably affecting the user’s zoom experience. To address this, we introduce the dual-camera smooth zoom (DCSZ) task, aiming to synthesize intermediate frames for fluid zooming. However, naively applying existing frame interpolation (FI) models for the task is challenging due to the motion domain gap and the scarcity of real-world ground truth. In this paper, we propose a novel data factory based on 3D Gaussian Splatting (3DGS) to construct large-scale training data. Specifically, we introduce Syn-ZoomGS, which generates extensive data from camera-independent 3D models by sampling camera parameters from fitted distributions, and Real-ZoomGS, which achieves high- fidelity synthesis by decoupling scene geometry from camera- specific characteristics. Furthermore, we design ZoomFI, an effective FI network tailored for DCSZ that incorporates bidirectional optical flows for photo-realistic zooming. Extensive experiments on both synthetic and real-world datasets of two mobile phones demonstrate that fine-tuning with our constructed DCSZ data significantly improves the performance of FI methods. Moreover, the proposed ZoomFI achieves state-of-the-art results in both quantitative metrics and visual quality. The datasets, codes, and pre-trained models will be publicly available.
+When zooming between dual cameras on smartphones, prominent discontinuities in both geometric perspective and color rendition inevitably degrade the visual experience of users. To address this, we introduce the dual-camera smooth zoom (DCSZ) task, aiming to synthesize continuous intermediate frames for fluid zooming. However, directly applying existing video frame interpolation (VFI) models to this task is severely hindered by substantial domain gaps and the physical intractability of capturing real-world continuous ground truth. To this end, we propose a novel data synthesis framework to generate high-fidelity DCSZ training sequences, named ZoomGS v2. It explicitly decouples geometric trajectories and photometric transformations from 3D representation modeling, thereby enabling extensive data generation from easily accessible single-camera 3D scenes. Furthermore, we design ZoomFI, a specialized VFI network tailored to the DCSZ task, which leverages complementary bidirectional optical flows for comprehensive dual-camera information fusion. Extensive experiments on real-world datasets of two mobile phones demonstrate that training with our constructed DCSZ data significantly improves the performance of various VFI models. Moreover, the proposed ZoomFI achieves state-of-the-art results in both quantitative metrics and visual quality. The datasets, codes, and pre-trained models will be publicly available.
 
 ## 2.Method
-### 2.1 Syn-ZoomGS
+### 2.1 ZoomGS v2
 <p align="center"><img src="./assets/pipline_synzoomgs.png" width="95%"></p>
-First we use the Syn-ZoomGS method to generate training data. (a)The pipline of Syn-ZoomGS. Syn-ZoomGS first sample camera parameters of UW and W from data Distribution, calculate and interpolate camera parameter. Then it render image sequence from reconstructed 3DGS representation. Finally it samples color transformation parameters from color Distribution and interpolates them, and applies them to the rendered images. (b) Statistics of Geometric transformation parameters. (c) Statistics of Color transformation parameters.
+First we use the Syn-ZoomGS method to generate training data. (a) The pipeline of ZoomGS v2. ZoomGS v2 first construct corresponding W camera from UW via math operations and relative vector sampled from Distribution, and calculate camera parameters of UW and W and interpolate camera parameter of virtual cameras. Then it render image sequence from reconstructed 3DGS representation. Finally it predict photometric transformation parameters from color predicting CNN and interpolates them, and applies them to the photometric transformation. (b) Statistics of relative vector Distribution. ZoomGS v2 collect multiple camera parameters from UW&W pairs and statistically obtain gaussian distribution. (c) Training of Color Prediction CNN. ZoomGS v2 train a CNN with UW&W pairs to predict the parameters of photometric transformation pipline from UW to W. The UW images are aligned to W images.
 
-### 2.2 Real-ZoomGS
-<p align="center"><img src="./assets/pipline_realzoomgs.png" width="95%"></p>
-(a) Over view of Real-ZoomGS. The virtual (V) camera parameters are constructed by interpolating the dual-camera ones, and are then input into ZoomGS to generate zoom sequences. (b) Construction of Real-ZoomGS. Real-ZoomGS employs a camera transition (CamTrans) module to transform the base (ie, UW camera) Gaussians to the specific camera Gaussians according to the camera encoding.
-
-### 2.3 Zoom FI
+### 2.2 Zoom FI
 <p align="center"><img src="./assets/FI_model.png" width="35%"></p>
-The Structure of ZoomFI, a specialized FI model for photo-realistic zooming between dual cameras.
+Structure of ZoomFI. Left is the pipeline of ZoomFI, right is the structure of RBlock in ZoomFI.
 
 ## 3.Prerequisites and Datasets
 ### 3.1 Prerequisites
