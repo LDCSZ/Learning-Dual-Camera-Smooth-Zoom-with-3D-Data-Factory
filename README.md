@@ -11,7 +11,7 @@ When zooming between dual cameras on smartphones, prominent discontinuities in b
 First we use the Syn-ZoomGS method to generate training data. (a) The pipeline of ZoomGS v2. ZoomGS v2 first construct corresponding W camera from UW via math operations and relative vector sampled from Distribution, and calculate camera parameters of UW and W and interpolate camera parameter of virtual cameras. Then it render image sequence from reconstructed 3DGS representation. Finally it predict photometric transformation parameters from color predicting CNN and interpolates them, and applies them to the photometric transformation. (b) Statistics of relative vector Distribution. ZoomGS v2 collect multiple camera parameters from UW&W pairs and statistically obtain gaussian distribution. (c) Training of Color Prediction CNN. ZoomGS v2 train a CNN with UW&W pairs to predict the parameters of photometric transformation pipline from UW to W. The UW images are aligned to W images.
 
 ### 2.2 Zoom FI
-<p align="center"><img src="./assets/FI_model.png" width="35%"></p>
+<p align="center"><img src="./assets/FI_model.png" width="95%"></p>
 Structure of ZoomFI. Left is the pipeline of ZoomFI, right is the structure of RBlock in ZoomFI.
 
 ## 3.Prerequisites and Datasets
