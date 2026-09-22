@@ -41,18 +41,18 @@ Coming soon.
 - Training: run [`bash ./train.sh`](./train.sh)
 - Inference test data: run [`bash ./inference.sh`](./inference.sh)
 - Image quality testing: 
-    -  run [`cd ./test_img`] 
-    -  run [`bash ./test.sh`](./test.sh)
+    - Run [`cd ./test_img`] (./test_img)
+    - Run [`bash ./test.sh`](./test.sh)
 - Video quality testing: 
-    -  run [`cd ./test_video`]
-    -  run [`cd ./DOVER-master`]
-    -  run [`bash ./test.sh`](./test.sh)
-    -  run [`cd ../FAST-VQA-and-FasterVQA-dev`]
-    -  run [`bash ./test.sh`](./test.sh)
-- Color continuity testing:
-    -  run [`cd ./test_color`]
-    -  run [`bash ./crop_img.sh`](./crop_img.sh)
-    -  run [`bash ./test_color.sh`](./test_color.sh)
+    - Run [`cd ./test_video`] (./test_video)
+    - Run [`cd ./DOVER-master`] (./test_video/DOVER-master)
+    - Run [`bash ./test.sh`](./test.sh)
+    - Run [`cd ../FAST-VQA-and-FasterVQA-dev`] (./test_video/FAST-VQA-and-FasterVQA-dev)
+    - Run [`bash ./test.sh`](./test.sh)
+- Colr continuity testing:
+    - Run [`cd ./test_color`] (./test_color)
+    - Run [`bash ./crop_img.sh`](./crop_img.sh)
+    - Run [`bash ./test_color.sh`](./test_color.sh)
 
 ## Acknowledgement
 
