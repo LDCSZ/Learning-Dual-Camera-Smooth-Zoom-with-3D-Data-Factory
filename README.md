@@ -12,7 +12,7 @@ When zooming between dual cameras on smartphones, prominent discontinuities in b
 (b) Pipline of ZoomGS v2. ZoomGS v2 first calibrate distribution of camera and color parameters from small dual-camera data, and then applies them to Gaussians constructed from large single-camera data for 3D scene rendering. The producted example on the right illustrates that ZoomGS v2 generates images with better quality than ZoomGS
 
 ### 2.2 Zoom FI
-<p align="center"><img src="./assets/FI_model.png" width="75%"></p>
+<p align="center"><img src="./assets/FI_model.png" width="55%"></p>
 Structure of ZoomFI.
 
 ## 3.Prerequisites and Datasets
@@ -36,11 +36,13 @@ Coming soon.
 - For huawei data, zoom factor of W set to 0.85, 
   Run [`bash ./zoomgs_render_huawei85.sh`](./zoomgs_trains.sh) -->
 
-## 6.Start for ZoomFI
+## 5.Start for ZoomFI
 - Run [`cd ./ZoomFI`](./FrameInterpolation)
 - Training: run [`bash ./train.sh`](./train.sh)
-- Testing on synthetic data: run [`bash ./test_syn.sh`](./test_syn.sh)
-- Testing on real-world data: run [`bash ./test_real.sh`](./test_real.sh)
+- Inference test data: run [`bash ./inference.sh`](./inference.sh)
+- Image quality testing: run [`cd ./test_img`] [`bash ./test.sh`](./test.sh)
+- Video quality testing: run [`cd ./test_video`] [`cd ./DOVER-master`] [`bash ./test.sh`](./test.sh) [`cd ../FAST-VQA-and-FasterVQA-dev`] [`bash ./test.sh`](./test.sh)
+- Color continuity testing: run [`cd ./test_color`] [`bash ./crop_img.sh`](./crop_img.sh) [`bash ./test_color.sh`](./test_color.sh)
 
 ## Acknowledgement
 
