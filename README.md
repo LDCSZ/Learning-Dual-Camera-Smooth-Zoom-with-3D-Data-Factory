@@ -18,7 +18,7 @@ Structure of ZoomFI.
 ## 3.Prerequisites and Datasets
 ### 3.1 Prerequisites
 - Python 3.8.16, PyTorch 2.1.1, **cuda-11.8**
-- We provide detailed dependencies in [`environment.yml`] for Real-ZoomGS and ZoomFI, and [`./SynZoomGS/environment.yml`] for Syn-ZoomGS.
+<!-- - We provide detailed dependencies in [`environment.yml`] for Real-ZoomGS and ZoomFI, and [`./SynZoomGS/environment.yml`] for Syn-ZoomGS. -->
 
 ### 3.2 Datasets
 
@@ -40,9 +40,19 @@ Coming soon.
 - Run [`cd ./ZoomFI`](./FrameInterpolation)
 - Training: run [`bash ./train.sh`](./train.sh)
 - Inference test data: run [`bash ./inference.sh`](./inference.sh)
-- Image quality testing: run [`cd ./test_img`] [`bash ./test.sh`](./test.sh)
-- Video quality testing: run [`cd ./test_video`] [`cd ./DOVER-master`] [`bash ./test.sh`](./test.sh) [`cd ../FAST-VQA-and-FasterVQA-dev`] [`bash ./test.sh`](./test.sh)
-- Color continuity testing: run [`cd ./test_color`] [`bash ./crop_img.sh`](./crop_img.sh) [`bash ./test_color.sh`](./test_color.sh)
+- Image quality testing: 
+      run [`cd ./test_img`] 
+      run [`bash ./test.sh`](./test.sh)
+- Video quality testing: 
+      run [`cd ./test_video`]
+      run [`cd ./DOVER-master`]
+      run [`bash ./test.sh`](./test.sh)
+      run [`cd ../FAST-VQA-and-FasterVQA-dev`]
+      run [`bash ./test.sh`](./test.sh)
+- Color continuity testing:
+       run [`cd ./test_color`]
+       run [`bash ./crop_img.sh`](./crop_img.sh)
+       run [`bash ./test_color.sh`](./test_color.sh)
 
 ## Acknowledgement
 
